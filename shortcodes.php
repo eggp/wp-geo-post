@@ -69,14 +69,14 @@ function wp_geo_post_shortcode( $attr, $content = "" ) {
 		"shortcode_id" => $shortcode_id,
 	);
 	ob_start();
-	if ( $overridden_template = locate_template( 'wp-geo-post-shortcode-' . $shortcode_id . '.php' ) ) {
+	unset( $GLOBALS['wp-geo-post'] );
+	if ( $overridden_template = locate_template( 'wp-geo-post-shortcode-list-' . $shortcode_id . '.php' ) ) {
 		load_template( $overridden_template );
-	} else if ( $overridden_template = locate_template( 'wp-geo-post-shortcode.php' ) ) {
+	} else if ( $overridden_template = locate_template( 'wp-geo-post-shortcode-list.php' ) ) {
 		load_template( $overridden_template );
 	} else {
-		load_template( dirname( __FILE__ ) . '/templates/wp-geo-post-shortcode.php' );
+		load_template( dirname( __FILE__ ) . '/templates/wp-geo-post-shortcode-list.php' );
 	}
-	unset( $GLOBALS['wp-geo-post'] );
 	wp_reset_query();
 
 	$content = ob_get_contents();

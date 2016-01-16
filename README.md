@@ -6,11 +6,16 @@ Admin:
 
 Front end:
 - Shortcode:
-    - [wpgeopost id="NUMBER" count="NUMBER" list-type="post,page..."]
-    id = templateben használjuk ha szükséges
+    - [wpgeopost id="CHAR" count="NUMBER" list-type="post,page..."]
+    id = templateben használjuk ha szükséges és template fájl név generálásnál
     *count = hány postot listázzunk
     list-type = post type nevek vesszővel felsorolva, [defaul: config]
 
+
+Template themeből:
+- wp-geo-post-shortcode-not-found.php - ha nincs találat vagy nincs gps adat
+- wp-geo-post-shortcode-list-SHORTCODEID.php - paraméterben megadott id-val a lista template
+- wp-geo-post-list-shortcode.php - lista template például: wp-geo-post/templates/wp-geo-post-shortcode-list.php
 
 Mükődés:
 - adatokat performance szempont miatt külön táblában tároljuk
