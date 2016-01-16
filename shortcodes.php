@@ -69,7 +69,6 @@ function wp_geo_post_shortcode( $attr, $content = "" ) {
 		"shortcode_id" => $shortcode_id,
 	);
 	ob_start();
-	unset( $GLOBALS['wp-geo-post'] );
 	if ( $overridden_template = locate_template( 'wp-geo-post-shortcode-list-' . $shortcode_id . '.php' ) ) {
 		load_template( $overridden_template );
 	} else if ( $overridden_template = locate_template( 'wp-geo-post-shortcode-list.php' ) ) {
@@ -77,6 +76,7 @@ function wp_geo_post_shortcode( $attr, $content = "" ) {
 	} else {
 		load_template( dirname( __FILE__ ) . '/templates/wp-geo-post-shortcode-list.php' );
 	}
+	unset( $GLOBALS['wp-geo-post'] );
 	wp_reset_query();
 
 	$content = ob_get_contents();
