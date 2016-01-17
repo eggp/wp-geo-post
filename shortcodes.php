@@ -33,6 +33,7 @@ function wp_geo_post_shortcode( $attr, $content = "" ) {
 		}
 	}
 
+	// TODO post tabla csatolasa a post tipus miatt
 	global $wpdb;
 	$post_ids = $wpdb->get_col(
 		$wpdb->prepare(

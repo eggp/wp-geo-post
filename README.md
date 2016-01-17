@@ -25,3 +25,6 @@ Mükődés:
 
 TODO:
 - server alapú geolocation
+
+Tested:
+- Simple WP 4.4.1 install
