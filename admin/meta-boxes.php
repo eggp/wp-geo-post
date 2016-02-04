@@ -10,7 +10,7 @@ function wp_geo_post_add_meta_box() {
 	$screens = get_option("wp_geo_post/post_types",array());
 
 	$post_type = get_post_type();
-	if(count($screens) > 0 && array_search($post_type,$screens)) {
+	if(count($screens) > 0 && array_search($post_type,$screens) !== false) {
 		add_meta_box(
 				'wp_geo_post',
 				'WP GEO POST',
