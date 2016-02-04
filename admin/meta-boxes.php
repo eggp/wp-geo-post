@@ -9,12 +9,13 @@
 function wp_geo_post_add_meta_box() {
 	$screens = get_option("wp_geo_post/post_types",array());
 
-	if(count($screens) > 0) {
+	$post_type = get_post_type();
+	if(count($screens) > 0 && array_search($post_type,$screens)) {
 		add_meta_box(
 				'wp_geo_post',
 				'WP GEO POST',
 				'wp_geo_post_meta_box_callback',
-				$screens,
+				$post_type,
 				'side'
 		);
 	}
